@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/editLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <EditText
+            android:id="@+id/numField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="60dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="40dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/FirstBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/editLayout">
+        <TextView
+            android:id="@+id/BtnC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/BtnPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="50dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="50dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/SecondBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/FirstBtnLayout"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/num7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/num8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/num7"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/num9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@+id/num8"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/BtnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="50dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="55dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/ThirdBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/SecondBtnLayout"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/num4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/num5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@id/num4"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/num6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@id/num5"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/BtnPhr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textSize="50dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="45dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/FourthBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/ThirdBtnLayout"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@id/num1"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/num3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textSize="50dp"
+            app:layout_constraintLeft_toLeftOf="@id/num2"
+            android:layout_marginLeft="88dp"/>
+
+        <TextView
+            android:id="@+id/BtnDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="50dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="50dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/FifthBtnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorGrey"
+        app:layout_constraintRight_toLeftOf="@id/EqualLayout"
+        app:layout_constraintTop_toBottomOf="@+id/FourthBtnLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/num0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="50dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:id="@+id/BtnDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="."
+            android:textSize="50dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintLeft_toLeftOf="@id/num0"
+            android:layout_marginLeft="95dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/EqualLayout"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="8.9dp"
+        android:background="@color/colorRed"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FourthBtnLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:id="@+id/BtnEqual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textSize="50dp"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
