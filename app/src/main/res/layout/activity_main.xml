@@ -44,29 +44,20 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/FirstBtnLayout"
             app:layout_constraintBottom_toBottomOf="@+id/FirstBtnLayout"
-            app:layout_constraintRight_toLeftOf="@id/emp1"
+            app:layout_constraintRight_toLeftOf="@id/historyBtn"
             android:layout_marginLeft="20dp"/>
         <Button
-            android:id="@+id/emp1"
-            android:layout_width="wrap_content"
+            android:id="@+id/historyBtn"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
             android:textColor="@color/colorGrey"
+            android:text="History"
             app:layout_constraintLeft_toRightOf="@id/BtnC"
             app:layout_constraintTop_toTopOf="@id/FirstBtnLayout"
             app:layout_constraintBottom_toBottomOf="@id/FirstBtnLayout"
-            app:layout_constraintRight_toLeftOf="@id/emp2"/>
-
-        <Button
-            android:id="@+id/emp2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            android:textColor="@color/colorGrey"
-            app:layout_constraintLeft_toRightOf="@id/emp1"
-            app:layout_constraintTop_toTopOf="@id/FirstBtnLayout"
-            app:layout_constraintBottom_toBottomOf="@id/FirstBtnLayout"
-            app:layout_constraintRight_toLeftOf="@id/BtnPlus"/>
+            app:layout_constraintRight_toLeftOf="@id/BtnPlus"
+            android:onClick="getHistory"/>
 
         <Button
             android:id="@+id/BtnPlus"
@@ -79,7 +70,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/FirstBtnLayout"
             app:layout_constraintBottom_toBottomOf="@id/FirstBtnLayout"
-            app:layout_constraintLeft_toRightOf="@id/emp2"
+            app:layout_constraintLeft_toRightOf="@id/historyBtn"
             android:layout_marginRight="20dp"/>
     </android.support.constraint.ConstraintLayout>
 
