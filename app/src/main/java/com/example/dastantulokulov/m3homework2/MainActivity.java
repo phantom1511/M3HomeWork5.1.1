@@ -2,22 +2,30 @@ package com.example.dastantulokulov.m3homework2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    MainAdapter adapter;
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnPlus, btnMinus, btnP, btnDiv, btnEqual, btnDot, btnC;
     EditText editText;
 
+
     float Value1, Value2;
-    boolean PLUS, MINUS, PERCENT, DIVIDE;
+    boolean PLUS, MINUS, PERCENT, DIVIDE ;
 
     String resultText;
 
@@ -25,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+//        recyclerView.setLayoutManager(layoutManager);
+
+//        adapter = new MainAdapter();
+//        recyclerView.setAdapter(adapter);
+
         editText = findViewById(R.id.numField);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -206,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
                     editText.setText(Value1 / Value2 + "");
                     DIVIDE = false;
                 }
+                //adapter.addElement("textKey");
             }
         });
 
@@ -214,12 +230,40 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editText.setText("");
             }
+
         });
     }
 
     public void getHistory(View view) {
+
+        String operation;
+
+        if (PLUS){
+            operation = "+";
+        }else if (PERCENT){
+            operation = "%";
+        }else if (MINUS){
+            operation = "-";
+        }else if (DIVIDE){
+            operation = "/";
+        }
+
+        operation = "+";
+
         Intent intent = new Intent(this, Main2Activity.class);
-        intent.putExtra("textKey",Value1 + " + " + Value2 + " = " + resultText);
+        intent.putExtra("textKey",Value1 + " " + operation + " " + Value2 + " = " + resultText);
         startActivityForResult(intent, 2);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+
+    public void addElementToList(View view) {
+        adapter.addElement(Value1 + " " + "+" + " " + Value2 + " = " + resultText);
     }
 }
