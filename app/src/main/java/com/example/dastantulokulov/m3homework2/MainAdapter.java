@@ -8,13 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
     ArrayList<String> data;
 
-    public MainAdapter() {
-        data = new ArrayList<>();
+    public MainAdapter(ArrayList<String> data) {
+        this.data = data;
+        //data = new ArrayList<>();
+        /*for (int i = 0; i < 200; i++) {
+            data.add("Element N " + i);
+        }*/
+
     }
 
     public void addElement(String string) {
@@ -27,7 +33,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.activity_main2, parent, false);
+        View view = inflater.inflate(R.layout.view_holder_main, parent, false);
         MainViewHolder viewHolder = new MainViewHolder(view);
         return viewHolder;
     }

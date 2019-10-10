@@ -14,11 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
-
-    RecyclerView recyclerView;
-    MainAdapter adapter;
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnPlus, btnMinus, btnP, btnDiv, btnEqual, btnDot, btnC;
     EditText editText;
@@ -28,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
     boolean PLUS, MINUS, PERCENT, DIVIDE ;
 
     String resultText;
+    ArrayList<String> history = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 //        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 //        recyclerView.setLayoutManager(layoutManager);
@@ -201,24 +202,31 @@ public class MainActivity extends AppCompatActivity {
                 Value2 = Float.parseFloat(editText.getText() + "");
 
                 if (PLUS == true) {
-
                     editText.setText(Value1 + Value2 + "");
+                    resultText = Value1 + " + " + Value2 + " = " + editText.getText().toString();
+                    history.add(resultText);
                     PLUS = false;
                 }
 
 
                 if (MINUS == true) {
                     editText.setText(Value1 - Value2 + "");
+                    resultText = Value1 + " - " + Value2 + " = " + editText.getText().toString();
+                    history.add(resultText);
                     MINUS = false;
                 }
 
                 if (PERCENT == true) {
                     editText.setText(Value1 * Value2 / 100 + "");
+                    resultText = Value1 + " % " + Value2 + " = " + editText.getText().toString();
+                    history.add(resultText);
                     PERCENT = false;
                 }
 
                 if (DIVIDE == true) {
                     editText.setText(Value1 / Value2 + "");
+                    resultText = Value1 + " / " + Value2 + " = " + editText.getText().toString();
+                    history.add(resultText);
                     DIVIDE = false;
                 }
                 //adapter.addElement("textKey");
@@ -236,34 +244,60 @@ public class MainActivity extends AppCompatActivity {
 
     public void getHistory(View view) {
 
-        String operation;
-
-        if (PLUS){
-            operation = "+";
-        }else if (PERCENT){
-            operation = "%";
-        }else if (MINUS){
-            operation = "-";
-        }else if (DIVIDE){
-            operation = "/";
-        }
-
-        operation = "+";
+//        String operation;
+//
+//        if (PLUS){
+//            operation = "+";
+//        }else if (PERCENT){
+//            operation = "%";
+//        }else if (MINUS){
+//            operation = "-";
+//        }else if (DIVIDE){
+//            operation = "/";
+//        }
+//
+//        operation = "+";
 
         Intent intent = new Intent(this, Main2Activity.class);
-        intent.putExtra("textKey",Value1 + " " + operation + " " + Value2 + " = " + resultText);
-        startActivityForResult(intent, 2);
+        intent.putExtra("textKey",history);
+        startActivity(intent);
 
     }
 
-    @Override
-    public void onBackPressed() {
-        Intent intent = new Intent();
-        setResult(RESULT_OK, intent);
-        finish();
-    }
 
-    public void addElementToList(View view) {
-        adapter.addElement(Value1 + " " + "+" + " " + Value2 + " = " + resultText);
-    }
+
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent();
+//        setResult(RESULT_OK, intent);
+//        finish();
+//    }
+
+
+
+    /*public void addElementToList(View view) {
+        Value2 = Float.parseFloat(editText.getText() + "");
+
+        if (PLUS == true) {
+            editText.setText(Value1 + Value2 + "");
+            PLUS = false;
+        }
+
+
+        if (MINUS == true) {
+            editText.setText(Value1 - Value2 + "");
+            MINUS = false;
+        }
+
+        if (PERCENT == true) {
+            editText.setText(Value1 * Value2 / 100 + "");
+            PERCENT = false;
+        }
+
+        if (DIVIDE == true) {
+            editText.setText(Value1 / Value2 + "");
+            DIVIDE = false;
+        }
+    }*/
+
 }

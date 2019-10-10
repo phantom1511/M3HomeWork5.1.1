@@ -319,8 +319,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="25dp"
-            android:onClick="addElementToList"/>
+            android:layout_marginTop="25dp"/>
 
     </android.support.constraint.ConstraintLayout>
 
