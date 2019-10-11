@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (PLUS == true) {
                     editText.setText(Value1 + Value2 + "");
-                    resultText = Value1 + " + " + Value2 + " = " + editText.getText().toString();
+                    resultText = editText.getText().toString();
                     history.add(resultText);
                     PLUS = false;
                 }
@@ -211,21 +211,21 @@ public class MainActivity extends AppCompatActivity {
 
                 if (MINUS == true) {
                     editText.setText(Value1 - Value2 + "");
-                    resultText = Value1 + " - " + Value2 + " = " + editText.getText().toString();
+                    resultText = editText.getText().toString();
                     history.add(resultText);
                     MINUS = false;
                 }
 
                 if (PERCENT == true) {
                     editText.setText(Value1 * Value2 / 100 + "");
-                    resultText = Value1 + " % " + Value2 + " = " + editText.getText().toString();
+                    resultText = editText.getText().toString();
                     history.add(resultText);
                     PERCENT = false;
                 }
 
                 if (DIVIDE == true) {
                     editText.setText(Value1 / Value2 + "");
-                    resultText = Value1 + " / " + Value2 + " = " + editText.getText().toString();
+                    resultText = editText.getText().toString();
                     history.add(resultText);
                     DIVIDE = false;
                 }

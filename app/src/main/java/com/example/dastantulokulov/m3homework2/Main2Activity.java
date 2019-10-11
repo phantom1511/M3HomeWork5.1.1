@@ -29,7 +29,7 @@ public class Main2Activity extends AppCompatActivity {
         textView = findViewById(R.id.resultTextView);
         Intent intent = getIntent();
         //resultText = intent.getStringExtra("textKey");
-       // textView.setText(resultText);
+        //textView.setText(resultText);
 
         ArrayList<String> data = intent.getStringArrayListExtra("textKey");
 
@@ -38,6 +38,7 @@ public class Main2Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new MainAdapter(data);
+        adapter.activity = this;
         recyclerView.setAdapter(adapter);
     }
 

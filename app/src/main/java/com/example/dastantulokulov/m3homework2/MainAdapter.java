@@ -1,5 +1,6 @@
 package com.example.dastantulokulov.m3homework2;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
+public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> implements onViewHolderListener{
 
     ArrayList<String> data;
+    Main2Activity activity;
 
     public MainAdapter(ArrayList<String> data) {
         this.data = data;
@@ -35,17 +37,37 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.view_holder_main, parent, false);
         MainViewHolder viewHolder = new MainViewHolder(view);
+        viewHolder.setOnClickListener(this);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        String text = data.get(position);
-        holder.textView.setText(text);
+        holder.onBind(data.get(position), (position));
+//        String text = data.get(position);
+//        holder.textView.setText(text);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public void onClick(int position) {
+        String string = data.get(position);
+        Intent intent = new Intent(activity, Main3Activity.class );
+
+        Calculation calculation = new Calculation();
+        calculation.Plus = "+";
+        calculation.Minus = "-";
+        calculation.Percent = "%";
+        calculation.Divide = "/";
+        calculation.Equal = "=";
+
+        ArrayList<Calculation> calculations = new ArrayList<>();
+
+        intent.putExtra("textKey", calculations);
+        activity.startActivity(intent);
     }
 }
